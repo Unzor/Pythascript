@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Pythascript</h2>
+  <p>
+    Pythascript puts Python inside your browser! Here's the demo for Pythascript:
+  </p>
+<button type="button" onclick="pythascript.loadUrl('demo.py', document.body, 'width: 800px; height: 500px;'); loadingTxt();">Load demo.py</button>
+<button type="button" onclick="pythascript.loadUrl('math.py', document.body, 'width: 800px; height: 500px;'); loadingTxt();">Load math.py</button>
+<button onclick="rc()"> Experiment </button>
+  <p>
+  This gets the code of your .py file, compiles it to Python, then puts it inside a textbox.
+  </p>
+  <p>
+  demo.py code:
+  </p>
+  <div style="background-color: #cccccc;">
+  <pre>
+     ‏‏‎ 
+    </pre>
+    <pre>
+  print("Hello!")
+  </pre>
+  <pre>
+ print("This message is made by Pythascript.")
+  </pre>
+     <pre>
+print("There are some things you cannot do with Pythascript, such as input(),")
+  </pre>
+         <pre>
+print("but you can still do many things with Pythascript!")
+  </pre>
+           <pre>
+print("Good luck on your first voyage!")
+</pre>
+  </div>
+  
+  
+  
+   <p>
+  math.py code:
+  </p>
+  <div style="background-color: #cccccc;">
+  <pre>
+     ‏‏‎ 
+    </pre>
+    <pre>
+    import math
+    </pre>
+        <pre>
+   x = math.sqrt(69)
+    </pre>
+    <pre>
+    print(x)
+    </pre>
+  </div>
+  
+  <b>
+  Please note that this takes a few seconds to load so please be patient.
+  </b>
+<script src="experimental.js"></script>
+   <script>
+ function rC(){
+ pythascript.runCode('print("Hello World!")', document.body, 'margin: 0;');
+ }
+  </script>
+ <script>
+  function loadingTxt(){
+    var p=document.createElement('p');
+    p.innerHTML="Loading...";
+    document.body.appendChild(p);
+  }
+  </script>
+
+</body>
+</html>
+
