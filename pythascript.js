@@ -42,3 +42,35 @@ setTimeout(function(){
     document.getElementById("codeForm").submit();
   }, 1000);
   }
+
+pythascript.runCode=function(code, element, css) {
+      var inspu=document.getElementById('code');
+      inspu.value=code;
+setTimeout(function(){
+ 
+  if (window.editor) {
+    window.editor.save();
+  }
+  var text = document.getElementById('code').value;
+  var ifr = document.createElement("iframe");
+  ifr.setAttribute("frameborder", "0");
+  ifr.setAttribute("id", "iframeResult");
+  ifr.setAttribute("name", "iframeResult");  
+  ifr.style=css;
+  element.appendChild(ifr);
+    var t=text;
+    t=t.replace(/=/gi,"w3equalsign");
+    t=t.replace(/\+/gi,"w3plussign");    
+    var pos=t.search(/script/i)
+    while (pos>0) {
+      t=t.substring(0,pos) + "w3" + t.substr(pos,3) + "w3" + t.substr(pos+3,3) + "tag" + t.substr(pos+6);
+	    pos=t.search(/script/i);
+    }
+    document.getElementById("code").value=t;
+    document.getElementById("codeForm").action = "https://try.w3schools.com/try_python.php?x=" + Math.random();
+    document.getElementById('codeForm').method = "post";
+    document.getElementById('codeForm').acceptCharset = "utf-8";
+    document.getElementById('codeForm').target = "iframeResult";
+    document.getElementById("codeForm").submit();
+  }, 1000);
+  }
